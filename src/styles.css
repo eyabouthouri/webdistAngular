@@ -1,1 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
+.custom-card-size {
+    width: 80%; /* Adjust this value to control the card width. */
+}
