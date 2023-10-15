@@ -12,6 +12,8 @@ import { ListProjetComponent } from './projet/list-projet/list-projet.component'
 import { AddProjetComponent } from './projet/add-projet/add-projet.component';
 import { ProjetModule } from './projet/projet.module';
 import { FormsModule } from '@angular/forms';
+import { FooterbackComponent } from './footerback/footerback.component';
+import { HeaderbackComponent } from './headerback/headerback.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
+    FooterbackComponent,
+    HeaderbackComponent,
     
   ],
   imports: [

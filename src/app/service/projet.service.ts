@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Projet } from './projet';
-import { Condidature } from './condidature';
+import { Projet } from './model/projet';
+import { Condidature } from './model/condidature';
 
 @Injectable({
   providedIn: 'root'

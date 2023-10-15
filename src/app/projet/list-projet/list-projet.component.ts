@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Projet } from 'src/app/service/model/projet';
-import { ProjetService } from 'src/app/service/model/projet.service';
+import { ProjetService } from 'src/app/service/projet.service';
 
 @Component({
   selector: 'app-list-projet',

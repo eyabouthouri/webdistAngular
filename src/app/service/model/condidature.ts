@@ -7,7 +7,6 @@ export class Condidature {
     prenom:String;
     tel :String;
     email:String;
-  
    public Condidature (){
    }
    }

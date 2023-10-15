@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Condidature } from 'src/app/service/model/condidature';
 import { Projet } from 'src/app/service/model/projet';
-import { ProjetService } from 'src/app/service/model/projet.service';
+import { ProjetService } from 'src/app/service/projet.service';
 
 @Component({
   selector: 'app-add-projet',

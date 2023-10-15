@@ -1,7 +1,7 @@
 import { Condidature } from "./condidature";
 
 export class Projet {   
-    idProjet : number;
+    projetId : number;
     dateProjet:Date;
     prix: number;
     description: string;
