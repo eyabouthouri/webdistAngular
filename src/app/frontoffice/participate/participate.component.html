@@ -1,0 +1,49 @@
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Participate</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+  
+            <form #f="ngForm" (ngSubmit)="participer(inscri)">
+  
+                <div class="single_post_job">
+                    <label>Nom</label>
+                    <input type="text" name="nom"placeholder="votre nom" [(ngModel)]="inscri.nom">
+                </div> <!-- single resume -->
+                <div class="single_post_job">
+                    <label>Prenom</label>
+                    <input type="text"  name="prenom" placeholder="votre prenom" [(ngModel)]="inscri.prenom">
+                </div>
+                <div class="single_post_job">
+                  <label>email</label>
+                  <input type="text"  name="email" placeholder="votre mail" [(ngModel)]="inscri.email">
+              </div>
+              <div class="single_post_job">
+                <label>phone</label>
+                <input type="text"  name="phone" placeholder="votre phone" [(ngModel)]="inscri.phone">
+            </div>
+  
+                <!-- single resume -->
+  
+  
+  
+  
+  
+  
+  
+                <div class="single_post_job">
+                    <button class="main-btn" type="submit">S'inscrire</button>
+                </div> <!-- single resume -->
+  
+            </form>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
