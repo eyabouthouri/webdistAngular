@@ -1,0 +1,46 @@
+<section class="post_job_area pt-80 pb-80">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-10">
+                <div class="post_job_form">
+
+                    <form #f="ngForm" (ngSubmit)="SaveCondid()"  menctype="multipart/form-data">
+                        <h4 class="post_job_title">Basic information</h4>
+                            <input type="file" id="cvUpload" name="cvUpload" accept=".pdf" 
+                            (change)="onFileChange($event)"required>
+                        <div class="single_post_job">
+                            <label class="single_post_job">nom :</label>
+                            <input type="text" [(ngModel)]="condidature.nom" name="nom" #t="ngModel" required>
+                        </div>
+
+                        <div class="single_post_job">
+                            <label class="single_post_job" for="description">prenom :</label>
+                            <textarea id="prenom" [(ngModel)]="condidature.prenom" name="description" #t="ngModel" required></textarea>
+                        </div>
+
+                        <div class="single_post_job">
+                            <label for="email">email :</label>
+                            <input type="email" step="0.01" id="prix" name="prix" [(ngModel)]="condidature.email" #t="ngModel" required>
+                        </div>
+
+                        <div class="single_post_job">
+                            <label for="tel">tel :</label>
+                            <input type="text" id="datepicker"  name="tel" [(ngModel)]="condidature.tel" #t="ngModel" required>
+                        </div>
+              
+                        
+                        <div class="single_post_job">
+                            <label for="lettreMotivation">lettreMotivation :</label>
+                            <input  id ="summernote " name="lettreMotivation" [(ngModel)]="condidature.lettreMotivation" #t="ngModel" required>
+                        </div>
+                        <div>
+                            <button type="submit">Ajouter</button>
+                        </div>
+                    </form>
+
+                </div> <!-- JobMate form -->
+            </div>
+        </div> <!-- JobMate form -->
+    </div>
+    <!-- container -->
+</section>
