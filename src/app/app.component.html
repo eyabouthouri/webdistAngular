@@ -1,4 +1,7 @@
 
-<app-header></app-header>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<app-header *ngIf="isFrontOfficeRoute()"></app-header>
+<app-headerback *ngIf="isbackRoute()"></app-headerback>
+<router-outlet ></router-outlet>
+<app-footerback *ngIf="isbackRoute()"></app-footerback>
+<app-footer *ngIf="isFrontOfficeRoute()"></app-footer>
+

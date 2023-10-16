@@ -1,0 +1,75 @@
+<section class="trending_jobs pt-75 pb-80 gray-bg">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-7">
+                <div class="section_title pb-25">
+                    <h5 class="sub_title">Explore</h5>
+                    <h3 class="main_title">Trending and Recent Formations</h3>
+                </div> <!-- section title -->
+            </div>
+            <div class="col-md-5">
+                <div class="jobs_tabs_menu d-flex justify-content-md-end">
+                    <ul class="nav" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="active" id="trending-tab" data-toggle="tab" href="#trending" role="tab" aria-controls="trending" aria-selected="true">Trending</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="recent-tab" data-toggle="tab" href="#recent" role="tab" aria-controls="recent" aria-selected="false">Recent jobs</a>
+                        </li>
+                    </ul> <!-- nav -->
+                </div> <!-- jobs tabs menu -->
+            </div>
+        </div> <!-- row -->
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="trending" role="tabpanel" aria-labelledby="trending-tab">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6"  *ngFor="let p of listFormation">
+                        <div class="single_jobs text-center mt-30">
+                            <div class="jobs_image">
+                                <img [src]="'http://localhost:8088/formation-service/images/' + p.image" alt="Image Example">
+                            </div>
+                            <div class="jobs_content">
+                                <h4 class="jobs_title"><a href="job-details.html">{{p.titre}}</a></h4>
+                                <p class="sub_title">{{p.description}}</p></div>
+                            <div class="jobs_meta d-flex justify-content-between">
+                                <p class="location"><i class="fa fa-map-marker"></i> 18 Brooklyn, NY</p>
+                                <p class="time">{{p.date_debut}}<i class="fa fa-clock-o"></i> </p>
+                                <p class="time">{{p.date_fin}}<i class="fa fa-clock-o"></i> </p>
+                            </div>
+                            <div class="jobs_btn">
+                                <a data-toggle="modal" data-target="#exampleModalCenter" href="job-details.html" class="main-btn main-btn-2" (click)="openModal(p.idFormation)">apply now</a>
+                            </div>
+                            <app-inscription *ngIf="addModal==true" [idFormation]="idFormation" [openModel]="addModal"></app-inscription>
+
+                        </div> <!-- single jobs -->
+                    </div>
+
+                </div> <!-- row -->
+            </div>
+            <div class="tab-pane fade" id="recent" role="tabpanel" aria-labelledby="recent-tab">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6" >
+                        <div class="single_jobs text-center mt-30">
+                            <div class="jobs_image">
+                                <img src="assets/images/jobs-6.jpg" alt="jobs">
+                            </div>
+                            <div class="jobs_content">
+                                <h4 class="jobs_title"><a href="job-details.html">UX Architecht</a></h4>
+                                <p class="sub_title">Hooli</p>
+                            </div>
+                            <div class="jobs_meta d-flex justify-content-between">
+                                <p class="location"><i class="fa fa-map-marker"></i> 18 Brooklyn, NY</p>
+                                <p class="time"><i class="fa fa-clock-o"></i> Full time</p>
+                            </div>
+                            <div class="jobs_btn">
+                                <a href="job-details.html" class="main-btn main-btn-2">apply now</a>
+                            </div>
+                        </div> <!-- single jobs -->
+                    </div>
+
+                </div> <!-- row -->
+            </div>
+        </div> <!-- tab content -->
+    </div> <!-- container -->
+</section>
+
