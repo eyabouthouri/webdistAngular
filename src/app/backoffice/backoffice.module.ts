@@ -6,17 +6,21 @@ import { BackofficeComponent } from './backoffice.component';
 import { FormationAdminComponent } from './formation-admin/formation-admin.component';
 import { HeaderbackComponent } from './headerback/headerback.component';
 import { FooterbackComponent } from './footerback/footerback.component';
+import { ReclamationsAdminComponent } from './reclamations-admin/reclamations-admin.component';
+import { SharedModule } from '../shared/shared.module';
+import { ReclamationsNonTraiteesComponent } from './reclamations-non-traitees/reclamations-non-traitees.component';
 
 
 @NgModule({
   declarations: [
     BackofficeComponent,
     FormationAdminComponent,
-
+    ReclamationsAdminComponent,
+    ReclamationsNonTraiteesComponent,
   ],
   imports: [
     CommonModule,
-    BackofficeRoutingModule
+    BackofficeRoutingModule,SharedModule
   ]
 })
 export class BackofficeModule { }

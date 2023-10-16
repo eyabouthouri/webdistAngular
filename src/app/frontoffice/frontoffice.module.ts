@@ -9,7 +9,6 @@ import { FormationComponent } from './formation/formation.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { InscriptionComponent } from './inscription/inscription.component';
-import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
@@ -18,7 +17,7 @@ import { BrowserModule } from '@angular/platform-browser';
   ],
   imports: [
     CommonModule,
-    FrontofficeRoutingModule,FormsModule,HttpClientModule,
+    FrontofficeRoutingModule,FormsModule,HttpClientModule
 
   ]
 })

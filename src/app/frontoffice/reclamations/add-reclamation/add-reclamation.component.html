@@ -1,0 +1,147 @@
+<section class="contact_area pt-30 pb-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="contact_form mt-45">
+          <h4 class="contact_title">Envoyer une Réclamation</h4>
+
+          <form
+            #f="ngForm"
+            (ngSubmit)="saveReclamation()"
+            enctype="multipart/form-data"
+          >
+            <div class="row">
+              <div class="col-md-12">
+                <div class="single_form">
+                  <input
+                    name="sujet"
+                    type="text"
+                    placeholder="Sujet"
+                    [(ngModel)]="reclamation.sujet"
+                    class="form-control"
+                    required
+                    #t="ngModel"
+                  />
+                </div>
+                <div
+                  class="form-group col-md-3 alert alert-danger"
+                  *ngIf="t.invalid && t.touched"
+                >
+                  <div *ngIf="t.hasError('required')">obligatoire</div>
+
+                  <div *ngIf="t.hasError('pattern')">Mail n'est pas valide</div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="single_form">
+                  <select
+                    class="form-control"
+                    id="categorie"
+                    name="categorie"
+                    [(ngModel)]="reclamation.categorie"
+                  >
+                    <option value="" disabled selected>Catégorie</option>
+                    <option value="PROBLEME_TECHNIQUE">
+                      Problème technique
+                    </option>
+                    <option value="SERVICE_CLIENT">Service client</option>
+                    <option value="FACTURATION">Facturation</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="single_form">
+                  <select
+                    name="evaluation"
+                    class="form-control"
+                    [(ngModel)]="reclamation.evaluation"
+                  >
+                    <option value="" disabled selected>
+                      Evaluation reclamation
+                    </option>
+                    <option value="BASSE">1 (Basse)</option>
+                    <option value="MOYENNE">2 (Moyenne)</option>
+                    <option value="ELEVEE">3 (Élevée)</option>
+                    <option value="TRES_ELEVEE">4 (Très élevée)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="single_form">
+                  <textarea
+                    id="description"
+                    name="description"
+                    placeholder="Description"
+                    [(ngModel)]="reclamation.description"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <br />
+                <input
+                  type="file"
+                  name="pieceJointe"
+                  (change)="onFileSelected($event)"
+                />
+              </div>
+              <div class="col-md-12">
+                <div class="single_form">
+                  <button class="main-btn" type="submit">
+                    Envoyer Reclamation
+                  </button>
+                </div>
+                <!-- single form -->
+              </div>
+            </div>
+            <!-- row -->
+          </form>
+        </div>
+        <!-- contact form -->
+      </div>
+      <div class="col-lg-6">
+        <div class="contact_info mt-45">
+          <h4 class="contact_title">Contact Address</h4>
+
+          <div class="contact_info_wrapper">
+            <div class="single_contact_info d-sm-flex">
+              <div class="contact_icon">
+                <i class="fa fa-map-marker"></i>
+              </div>
+              <div class="contact_content media-body">
+                <p>Main Office: NO.22-23 Street Name- City,Country</p>
+                <p>Customer Center: NO.130-45 Streen Name- City, Country</p>
+              </div>
+            </div>
+            <!-- single contact info -->
+
+            <div class="single_contact_info d-sm-flex">
+              <div class="contact_icon">
+                <i class="fa fa-envelope"></i>
+              </div>
+              <div class="contact_content media-body">
+                <p>Customer Support: info@mail.com</p>
+                <p>Technical Support: support@mail.com</p>
+              </div>
+            </div>
+            <!-- single contact info -->
+
+            <div class="single_contact_info d-sm-flex">
+              <div class="contact_icon">
+                <i class="fa fa-phone"></i>
+              </div>
+              <div class="contact_content media-body">
+                <p>Main Office: +880 123 456 789</p>
+                <p>Customer Supprort: +880 123 456 789</p>
+              </div>
+            </div>
+            <!-- single contact info -->
+          </div>
+          <!-- contact info -->
+        </div>
+        <!-- contact info -->
+      </div>
+    </div>
+    <!-- row -->
+  </div>
+  <!-- container -->
+</section>

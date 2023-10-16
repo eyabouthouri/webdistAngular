@@ -1,0 +1,184 @@
+<style>
+  .sidebarr {
+    position: fixed;
+    width: 250px;
+  }
+
+  .content {
+    z-index: 1;
+    margin-left: 260px; /* Adjust this value to create space for the sidebar */
+  }
+  .sidebarr {
+    z-index: 2;
+  }
+  /* Style for the search input */
+  .search-input {
+    width: 350px; /* Set the width as desired */
+    height: 40px; /* Set the height as desired */
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px; /* Increase font size for larger input */
+    background-color: #f2f2f2;
+    outline: none; /* Remove the outline when focused */
+  }
+
+  /* Style for the search input when focused */
+  .search-input:focus {
+    border-color: #007bff; /* Change the border color when focused */
+  }
+  .search-box {
+    display: inline-block;
+
+    position: relative;
+  }
+
+  /* Style pour l'icône de recherche */
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #888; /* Couleur de l'icône */
+    cursor: pointer; /* Curseur de souris au survol de l'icône */
+  }
+</style>
+
+<!-- reclamation.component.html -->
+<aside id="sidebar" class="sidebarr">
+  <ul class="sidebar-nav" id="sidebar-nav">
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="index.html">
+        <i class="bi bi-grid"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+    <!-- End Dashboard Nav -->
+
+    <!-- End Components Nav -->
+
+    <li class="nav-item">
+      <a
+        class="nav-link collapsed"
+        data-bs-target="#forms-nav"
+        data-bs-toggle="collapse"
+        href="#"
+      >
+        <i class="bi bi-journal-text"></i><span>Forms</span
+        ><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul
+        id="forms-nav"
+        class="nav-content collapse"
+        data-bs-parent="#sidebar-nav"
+      >
+        <li>
+          <a href="forms-elements.html">
+            <i class="bi bi-circle"></i><span>Form Elements</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <!-- End Forms Nav -->
+
+    <!-- End Blank Page Nav -->
+  </ul>
+</aside>
+<br /><br /><br />
+
+<section class="section content">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card-body">
+        <div class="navbar navbar-expand-lg">
+          <!-- Navbar content -->
+
+          <!-- Links under the navbar -->
+          <div class="navbar-nav">
+            <a
+              class="card-title nav-item nav-link"
+              [routerLink]="['/backoffice/nontraitees']"
+              >Réclamations non traitées</a
+            >
+            <a
+              class="card-title nav-item nav-link"
+              [routerLink]="['/backoffice/adminrec']"
+              >Réclamations traitées</a
+            >
+          </div>
+        </div>
+        <div
+          class="datatable-wrapper datatable-loading no-footer sortable searchable"
+        >
+          <div class="datatable-container">
+            <!-- Add the search input here -->
+            <div class="search-box">
+              <input
+                class="search-input"
+                type="text"
+                placeholder="Rechercher par sujet, categorie.."
+              />
+              <i class="fa fa-search search-icon"></i>
+            </div>
+            <br />
+          </div>
+        </div>
+        <div class="datatable-container">
+          <table style="min-width: 200%" class="table">
+            <thead>
+              <tr>
+                <th>Sujet</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Categorie</th>
+                <th>Evaluation</th>
+                <th>Etat</th>
+                <th>Piece jointe</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of reclamations">
+                <td>{{ item.sujet }}</td>
+                <td>
+                  <textarea cols="25" rows="5" disabled>{{
+                    item.description
+                  }}</textarea>
+                </td>
+                <td>{{ item.dateSoumission | dateFormat }}</td>
+                <td>{{ item.categorie }}</td>
+                <td>{{ item.evaluation }}</td>
+                <td>{{ item.etat }}</td>
+                <td class="image-container">
+                  <a
+                    [href]="'/uploads/' + item.pieceJointe"
+                    data-lightbox="image-set"
+                  >
+                    <img
+                      style="width: 250px; height: 130px"
+                      [src]="serverImageUrl + item.pieceJointe"
+                      alt="Image de la pièce jointe"
+                    />
+                  </a>
+                </td>
+
+                <td *ngIf="item.etat === true && item.reponse">
+                  <a
+                    [routerLink]="['/reponses/show', item.reponse.id]"
+                    class="btn btn-primary"
+                    >Afficher Réponse</a
+                  >
+                </td>
+                <td>
+                  <button class="btn btn-danger">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
