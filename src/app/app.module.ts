@@ -21,7 +21,7 @@ import { FooterbackComponent } from './backoffice/footerback/footerback.componen
     HeaderComponent,
     FooterComponent,HeaderbackComponent,FooterbackComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, FrontofficeModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, FrontofficeModule,],
   providers: [],
   bootstrap: [AppComponent]
 })

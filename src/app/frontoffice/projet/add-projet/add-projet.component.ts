@@ -24,7 +24,7 @@ export class AddProjetComponent implements OnInit {
   saveProjet() {  
     this.projetService.addProjet(this.projet).subscribe(
       () => {
-        this.route.navigate(['projet/listprojet']);
+        this.route.navigate(['rontoffice/projet/listprojet']);
       },
       error => {
         console.error('Error:', error);

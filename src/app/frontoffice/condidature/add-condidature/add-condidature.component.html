@@ -6,32 +6,34 @@
 
                     <form #f="ngForm" (ngSubmit)="SaveCondid()"  menctype="multipart/form-data">
                         <h4 class="post_job_title">Basic information</h4>
+                        <label class="single_post_job" for="cvUpload">CV :</label>
+
                             <input type="file" id="cvUpload" name="cvUpload" accept=".pdf" 
                             (change)="onFileChange($event)"required>
                         <div class="single_post_job">
                             <label class="single_post_job">nom :</label>
-                            <input type="text" [(ngModel)]="condidature.nom" name="nom" #t="ngModel" required>
+                            <input type="text" [(ngModel)]="condidature.nom" class="form-control" name="nom" #t="ngModel" required>
                         </div>
 
                         <div class="single_post_job">
                             <label class="single_post_job" for="description">prenom :</label>
-                            <textarea id="prenom" [(ngModel)]="condidature.prenom" name="description" #t="ngModel" required></textarea>
+                            <input id="prenom" [(ngModel)]="condidature.prenom"  class="form-control" name="description" #t="ngModel" required>
                         </div>
 
                         <div class="single_post_job">
                             <label for="email">email :</label>
-                            <input type="email" step="0.01" id="prix" name="prix" [(ngModel)]="condidature.email" #t="ngModel" required>
+                            <input type="email" step="0.01" id="prix" class="form-control" name="prix" [(ngModel)]="condidature.email" #t="ngModel" required>
                         </div>
 
                         <div class="single_post_job">
                             <label for="tel">tel :</label>
-                            <input type="text" id="datepicker"  name="tel" [(ngModel)]="condidature.tel" #t="ngModel" required>
+                            <input type="text" id="datepicker" class="form-control" name="tel" [(ngModel)]="condidature.tel" #t="ngModel" required>
                         </div>
               
                         
                         <div class="single_post_job">
                             <label for="lettreMotivation">lettreMotivation :</label>
-                            <input  id ="summernote " name="lettreMotivation" [(ngModel)]="condidature.lettreMotivation" #t="ngModel" required>
+                            <textarea  id ="summernote "  class="form-control" name="lettreMotivation" [(ngModel)]="condidature.lettreMotivation" #t="ngModel" required></textarea>
                         </div>
                         <div>
                             <button type="submit">Ajouter</button>

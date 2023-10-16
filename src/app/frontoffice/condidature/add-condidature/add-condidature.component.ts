@@ -47,36 +47,25 @@ export class AddCondidatureComponent implements OnInit {
       }
     }
     
-    uploadFile(): void {
-      if(!this.selectedFile) {
-        console.error("No file selected!");
-        return;
-      }
-  
-      // À partir d'ici, vous pouvez envoyer le fichier `this.selectedFile` à votre serveur
-      // Utilisez HttpClient pour effectuer la requête POST avec le fichier
-    }
-  
-  
-  
-  
-  
     SaveCondid() {  
-      if (!this.condidature.cvBase64) {
-          console.error("No CV uploaded!");
+      if (!this.selectedFile) {
+          console.error("No file selected!");
           return;
       }
 
-      this.condidatureService.addCondidatureToProjet(this.projetId, this.condidature).subscribe(
-        () => {
-          this.route.navigate(['projet/listprojet']);
-        },
-        error => {
-          console.error('Error:', error);
-        },
-        () => {
-          console.log('Complete');
-        }
+      const formData = new FormData();
+      formData.append('pieceJointe', this.selectedFile, this.selectedFile.name);  // Use the actual file name
+      formData.append('condidature', JSON.stringify(this.condidature));
+    
+      this.condidatureService.addCondidatureToProjet(this.projetId, formData).subscribe(
+          () => {
+              this.route.navigate(['projet/listprojet']);
+          },
+          (error) => {
+              console.log('Error:', error);
+          },
+          () => {
+              console.log('Complete');
+          }
       );
-    }
-} 
+  }}
