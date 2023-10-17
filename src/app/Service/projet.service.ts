@@ -19,5 +19,7 @@ export class ProjetService {
     return this.httpClient.post(`${this.API_URL}/addProjet`,p);
   } 
 
-
+  deleteProjet(id:number){
+    return this.httpClient.delete("http://localhost:8088/projet-service/deleteProjet/"+id)
+  }
 }

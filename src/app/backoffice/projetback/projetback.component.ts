@@ -26,4 +26,14 @@ export class ProjetbackComponent implements OnInit {
         console.log("listtttt", this.listprojet);
         this.cdr.detectChanges();
       });
-    }}
+    }
+  
+  
+    delete(c: Projet) {
+      let i = this.listprojet.indexOf(c);
+    this.projetservice.deleteProjet(c.projetId).subscribe(
+        ()=>this.listprojet.splice(i, 1)
+      )
+    }
+  
+  }

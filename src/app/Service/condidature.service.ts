@@ -14,4 +14,15 @@ export class CondidatureService {
   addCondidatureToProjet(projetId: number, formData: FormData): Observable<any> {
     return this.httpClient.post(`${this.API_URL}/condidate/${projetId}`, formData);
   }
+  getallCondidature() {
+    return this.httpClient.get(`${this.API_URL}/listCondid`);
+  }
+
+  downloadFile(fileName: string): Observable<Blob> {
+    const url = `${this.API_URL}/download/${fileName}`;
+    return this.httpClient.get(url, { responseType: 'blob' });
+  }
+  deleteCondidature(id:number){
+    return this.httpClient.delete("http://localhost:8088/projet-service/deleteCondidature/"+id)
+  }
 }

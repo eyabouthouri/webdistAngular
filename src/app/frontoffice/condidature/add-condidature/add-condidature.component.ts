@@ -59,7 +59,7 @@ export class AddCondidatureComponent implements OnInit {
     
       this.condidatureService.addCondidatureToProjet(this.projetId, formData).subscribe(
           () => {
-              this.route.navigate(['projet/listprojet']);
+              this.route.navigate(['frontoffice/projet/listprojet']);
           },
           (error) => {
               console.log('Error:', error);

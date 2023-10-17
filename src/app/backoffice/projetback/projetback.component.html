@@ -1,4 +1,6 @@
 
+<br><br><br><br>
+
 
 <!-- ======= Sidebar ======= -->
 <aside id="sidebar" class="sidebar">
@@ -235,37 +237,84 @@
   
     </ul>
   
-  </aside>
-<br><br><br><br>
-<br><br>
-<br><br>
+  </aside><!-- End Sidebar-->
+  
+  <!-- ======= Footer ======= -->
+  
+<style>
+.job_projects {
+    display: flex;
+    justify-content: flex-end;  /* Aligns the table more to the right */
+    align-items: center;
+    height: 100%;  /* Depending on your page's layout, you might want to adjust or remove this */
+    padding: 0 10%;  /* Adds some padding to the right side of the container */
+}
 
+.table {
+    width: 70%;  /* Reduced the width for a smaller table */
+    margin: 0 auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 50px rgba(0,0,0,0.15);
+}
+
+.table th {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.main-btn-2 {
+    background-color: #ff5252; 
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.main-btn-2:hover {
+    background-color: #e40000;
+}
+
+</style>
 <div class="job_projects">
-
-    <table class="table table-bordered">
+    <table class="table">
         <thead>
             <tr>
-                <th>Image</th>
                 <th>Nom</th>
                 <th>Description</th>
                 <th>Prix</th>
                 <th>Date du Projet</th>
-                <th>Temps</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
             <!-- Start of ngFor loop -->
             <tr *ngFor="let p of listprojet">
-                <td><img src="assets/images/jobs-1.jpg" alt="jobs"></td>
-                <td><a href="job-details.html">{{p.nom}}</a></td>
+                <td>{{p.nom}}</td>
                 <td>{{p.description}}</td>
                 <td>{{p.prix}}</td>
-                <td><i class="fa fa-map-marker"></i> {{p.dateProjet}}</td>
-                <td><i class="fa fa-clock-o"></i> Full time</td>
+                <td>{{p.dateProjet | date:'yyyy-MM-dd HH:mm'}}</td>
+                <td>              
+                  <button class="main-btn " (click)="delete(p)">delete</button>
+              </td>
             </tr>
             <!-- End of ngFor loop -->
         </tbody>
     </table>
-
-
+</div>

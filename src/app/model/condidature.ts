@@ -1,7 +1,7 @@
 
 export class Condidature {   
     idCondidature : number;
-    cv:String;
+    pieceJointe:String;
     lettreMotivation: String;
     nom : String;
     prenom:String;

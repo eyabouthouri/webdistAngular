@@ -14,6 +14,7 @@ import { HeaderComponent } from './frontoffice/header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderbackComponent } from './backoffice/headerback/headerback.component';
 import { FooterbackComponent } from './backoffice/footerback/footerback.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { FooterbackComponent } from './backoffice/footerback/footerback.componen
     HeaderComponent,
     FooterComponent,HeaderbackComponent,FooterbackComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, FrontofficeModule,],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, FrontofficeModule,CommonModule],
   providers: [],
   bootstrap: [AppComponent]
 })
