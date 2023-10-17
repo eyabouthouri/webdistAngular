@@ -1,77 +1,4 @@
-<style>
-  .job_projects {
-      display: flex;
-      justify-content: flex-end;  /* Aligns the table more to the right */
-      align-items: center;
-      height: 100%;  /* Depending on your page's layout, you might want to adjust or remove this */
-      padding: 0 10%;  /* Adds some padding to the right side of the container */
-  }
-  
-  .table {
-      width: 70%;  /* Reduced the width for a smaller table */
-      margin: 0 auto;
-      border-collapse: collapse;
-      box-shadow: 0 0 50px rgba(0,0,0,0.15);
-  }
-  
-  .table th {
-      background-color: #f5f5f5;
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
-  }
-  
-  .table td {
-      border: 1px solid #ddd;
-      padding: 8px;
-  }
-  
-  .table tr:nth-child(even) {
-      background-color: #f9f9f9;
-  }
-  
-  .table tr:hover {
-      background-color: #f5f5f5;
-  }
-  
-  .main-btn-2 {
-      background-color: #ff5252; 
-      color: #fff;
-      padding: 5px 10px;
-      text-decoration: none;
-      border-radius: 5px;
-      border: none;
-      cursor: pointer;
-  }
-  
-  .main-btn-2:hover {
-      background-color: #e40000;
-  }
-  .elegant-download-btn {
-    background-color: #4CAF50;  /* A subtle green color */
-    color: #fff;               /* White text color */
-    border: none;              /* Removing the default border */
-    border-radius: 3px;        /* Slightly rounded corners */
-    padding: 5px 10px;         /* Smaller padding for a more compact look */
-    font-size: 0.9em;          /* Smaller font size */
-    font-weight: 500;          /* Medium boldness for the text */
-    cursor: pointer;           /* Hand cursor to indicate clickability */
-    transition: all 0.2s;      /* Smooth transition for effects */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* subtle shadow */
-}
 
-.elegant-download-btn:hover {
-    background-color: #43A047;  /* A bit darker green on hover */
-    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
-}
-
-.elegant-download-btn:focus {
-    outline: none;  /* Removing the default outline on focus */
-    background-color: #388E3C;  /* Even darker green for focus */
-}
-
-  
-  </style>
 
 <!-- ======= Sidebar ======= -->
 <aside id="sidebar" class="sidebar">
@@ -317,7 +244,7 @@
             <tr>
                 <th>nom</th>
                 <th>prenom</th>
-                <th>lettre lettreMotivation</th>
+                <th>lettre Motivation</th>
                 <th>email</th>
                 <th>tel</th>
                 <th>cv</th>
@@ -326,18 +253,19 @@
         </thead>
         <tbody>
             <!-- Start of ngFor loop -->
-            <tr *ngFor="let p of listcondid">
-                <td>{{p.nom}}</td>
+            <tr *ngFor="let p of linkedCondidatures">
+              <td>{{p.nom}}</td>
                 <td>{{p.prenom}}</td>
                 <td>{{p.lettreMotivation}}</td>
                 <td>{{p.email}}</td>
                 <td>{{p.tel}}</td>
+
              
                 <td>
                   <button class="elegant-download-btn"   (click)="download(p.pieceJointe)">Download CV</button>
                 </td>
                 <td>              
-                    <button class="main-btn " (click)="delete(p)">delete</button>
+                  <button class="main-btn " (click)="delete(p)">delete</button>
                 </td>
             </tr>
             <!-- End of ngFor loop -->

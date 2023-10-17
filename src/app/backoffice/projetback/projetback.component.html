@@ -244,29 +244,29 @@
 <style>
 .job_projects {
     display: flex;
-    justify-content: flex-end;  /* Aligns the table more to the right */
+    justify-content: flex-end;
     align-items: center;
-    height: 100%;  /* Depending on your page's layout, you might want to adjust or remove this */
-    padding: 0 10%;  /* Adds some padding to the right side of the container */
+    height: 100%;
+    padding: 0 10%;
 }
 
 .table {
-    width: 70%;  /* Reduced the width for a smaller table */
+    width: 70%;
     margin: 0 auto;
     border-collapse: collapse;
-    box-shadow: 0 0 50px rgba(0,0,0,0.15);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.15);
 }
 
 .table th {
     background-color: #f5f5f5;
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 15px 8px;  /* Augmenté pour l'espacement */
     text-align: left;
 }
 
 .table td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 15px 8px;  /* Augmenté pour l'espacement */
 }
 
 .table tr:nth-child(even) {
@@ -274,22 +274,42 @@
 }
 
 .table tr:hover {
-    background-color: #f5f5f5;
+    background-color: #f0f0f0;  /* Couleur légèrement modifiée pour un effet subtil */
 }
 
 .main-btn-2 {
-    background-color: #ff5252; 
-    color: #fff;
-    padding: 5px 10px;
-    text-decoration: none;
-    border-radius: 5px;
+    background-color: #ff5252;
+    color: #ffffff;
+    padding: 8px 15px;  /* Augmenté pour une apparence plus grande */
+    border-radius: 4px;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease-in-out;  /* Ajouté pour une transition en douceur */
 }
 
 .main-btn-2:hover {
     background-color: #e40000;
 }
+
+.custom-link-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #77b5ba;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;  /* Ajouté pour une transition en douceur */
+}
+
+.custom-link-btn:hover {
+    background-color: #7bccd6;
+    transform: translateY(-2px);  /* Effet de léger soulèvement au survol */
+}
+
+.custom-link-btn:active {
+    transform: translateY(0);  /* Réinitialise l'effet au clic */
+}
+
 
 </style>
 <div class="job_projects">
@@ -300,6 +320,7 @@
                 <th>Description</th>
                 <th>Prix</th>
                 <th>Date du Projet</th>
+                <th>condidature du projet</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -310,6 +331,10 @@
                 <td>{{p.description}}</td>
                 <td>{{p.prix}}</td>
                 <td>{{p.dateProjet | date:'yyyy-MM-dd HH:mm'}}</td>
+                <td>
+                  <!-- ... autres cellules de données ... -->
+                  <a class="custom-link-btn" (click)="navigateToCondidatures(p.projetId, $event)">Voir les candidatures</a>
+                </td>
                 <td>              
                   <button class="main-btn " (click)="delete(p)">delete</button>
               </td>
@@ -317,4 +342,5 @@
             <!-- End of ngFor loop -->
         </tbody>
     </table>
+    
 </div>

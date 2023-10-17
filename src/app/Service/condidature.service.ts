@@ -25,4 +25,9 @@ export class CondidatureService {
   deleteCondidature(id:number){
     return this.httpClient.delete("http://localhost:8088/projet-service/deleteCondidature/"+id)
   }
+
+  getCondidaturesByProjetId(projectId: number): Observable<any> {
+    return this.httpClient.get(`${this.API_URL}/byProjet/${projectId}`);
+    
+  }
 }

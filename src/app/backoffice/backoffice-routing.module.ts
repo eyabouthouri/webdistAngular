@@ -7,7 +7,8 @@ import { CondidaturebackComponent } from './condidatureback/condidatureback.comp
 
 const routes: Routes = [{ path: '', component: BackofficeComponent },{path:'back',component:FormationAdminComponent},
 { path: 'projetback', component:ProjetbackComponent },
-{ path: 'condidtback', component:CondidaturebackComponent },
+{ path: 'condidtback/:id', component:CondidaturebackComponent },
+
 
 
 ];

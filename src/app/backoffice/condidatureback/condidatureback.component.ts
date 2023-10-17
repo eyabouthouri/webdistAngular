@@ -1,6 +1,9 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CondidatureService } from 'src/app/Service/condidature.service';
 import { Condidature } from 'src/app/model/condidature';
+import { ProjetService } from 'src/app/Service/projet.service';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-condidatureback',
@@ -15,15 +18,29 @@ export class CondidaturebackComponent implements OnInit {
   pieceJointe:any
   lettreMotivation:any
   listcondid:any
+  projectId: number;
+  linkedCondidatures: any[] = [];
+  showCondidatures: boolean = false;
 
-  constructor(private condidatureService: CondidatureService, private cdr: ChangeDetectorRef) {
+  constructor(private condidatureService: CondidatureService,private projetService: ProjetService,  private cdr: ChangeDetectorRef,private route: ActivatedRoute) {
   }
   ngOnInit(): void {
-    this.condidatureService.getallCondidature().subscribe(data => {
-      this.listcondid = data;
+    this.route.params.subscribe(params => {
+      this.projectId = +params['id'];
+      console.log('Received projectId:', this.projectId);
+      
+      this.condidatureService.getCondidaturesByProjetId(this.projectId).subscribe(data => {
+        this.linkedCondidatures = data;
+        console.log('Données reçues:', data);
+      }, error => {
+        console.error('Erreur lors de la récupération des candidatures:', error);
+      });
+  
       this.cdr.detectChanges();
     });
   }
+  
+
 
   download(fileName: string): void {
     this.condidatureService.downloadFile(fileName).subscribe(blob => {
@@ -37,10 +54,11 @@ export class CondidaturebackComponent implements OnInit {
 
 
   delete(c: Condidature) {
-    let i = this.listcondid.indexOf(c);
+    let i = this.linkedCondidatures.indexOf(c);
   this.condidatureService.deleteCondidature(c.idCondidature).subscribe(
-      ()=>this.listcondid.splice(i, 1)
+      ()=>this.linkedCondidatures.splice(i, 1)
     )
   }
+  
   
 }

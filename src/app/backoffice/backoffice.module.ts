@@ -23,7 +23,6 @@ import { CondidaturebackComponent } from './condidatureback/condidatureback.comp
   ],
   imports: [
     CommonModule,
-    BackofficeRoutingModule,FormsModule,HttpClientModule,
-  ]
+    BackofficeRoutingModule,FormsModule,HttpClientModule ]
 })
 export class BackofficeModule { }
