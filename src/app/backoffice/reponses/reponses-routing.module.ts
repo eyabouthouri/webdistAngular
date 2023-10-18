@@ -4,7 +4,7 @@ import { ReponsesComponent } from './reponses.component';
 import { AddReponseComponent } from './add-reponse/add-reponse.component';
 
 const routes: Routes = [{ path: '', component: ReponsesComponent },
-{ path: 'addreponse', component: AddReponseComponent }];
+{ path: 'addreponse/:id', component: AddReponseComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

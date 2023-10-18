@@ -148,23 +148,21 @@
                 <td>{{ item.dateSoumission | dateFormat }}</td>
                 <td>{{ item.categorie }}</td>
                 <td>{{ item.evaluation }}</td>
-                <td>{{ item.etat }}</td>
+                <td>En cours de traitement</td>
                 <td class="image-container">
-                  <a
-                    [href]="'/uploads/' + item.pieceJointe"
-                    data-lightbox="image-set"
-                  >
-                    <img
-                      style="width: 250px; height: 130px"
-                      [src]="serverImageUrl + item.pieceJointe"
-                      alt="Image de la pièce jointe"
-                    />
-                  </a>
+                  <img
+                    style="width: 250px; height: 130px"
+                    [src]="serverImageUrl + item.pieceJointe"
+                    alt="Image de la pièce jointe"
+                  />
                 </td>
                 <td *ngIf="item.etat === false">
                   <a
                     class="btn btn-success edit-item"
-                    [routerLink]="['/backoffice/reponses/addreponse', item.id]"
+                    [routerLink]="[
+                      '/backoffice/reponses/addreponse',
+                      item.idReclamation
+                    ]"
                   >
                     Traiter
                   </a>

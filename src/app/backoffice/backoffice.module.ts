@@ -9,6 +9,8 @@ import { FooterbackComponent } from './footerback/footerback.component';
 import { ReclamationsAdminComponent } from './reclamations-admin/reclamations-admin.component';
 import { SharedModule } from '../shared/shared.module';
 import { ReclamationsNonTraiteesComponent } from './reclamations-non-traitees/reclamations-non-traitees.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -20,7 +22,7 @@ import { ReclamationsNonTraiteesComponent } from './reclamations-non-traitees/re
   ],
   imports: [
     CommonModule,
-    BackofficeRoutingModule,SharedModule
+    BackofficeRoutingModule,SharedModule, FormsModule,HttpClientModule
   ]
 })
 export class BackofficeModule { }

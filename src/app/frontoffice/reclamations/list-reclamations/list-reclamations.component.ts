@@ -28,8 +28,5 @@ export class ListReclamationsComponent implements OnInit {
       ()=>this.reclamations.splice(i, 1))
   }
 
-  showResponse(d: Reponse){
-
-  }
 
 }

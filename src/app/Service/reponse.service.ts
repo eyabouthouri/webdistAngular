@@ -10,11 +10,11 @@ export class ReponseService {
 
   constructor(private http: HttpClient) { }
 
-  getReponse() {
-    return this.http.get(`${this.baseUrl}/getReponse`);
+  getReponse(idReclamation: number) {
+    return this.http.get(`${this.baseUrl}/getReponse/${idReclamation}`);
   }
   
-  addReclamation(idReclamation: number,formData:FormData) {
+  addReponse(idReclamation: number,formData:FormData) {
         return this.http.post(`${this.baseUrl}/addReponse/${idReclamation}`, formData);
   }
   

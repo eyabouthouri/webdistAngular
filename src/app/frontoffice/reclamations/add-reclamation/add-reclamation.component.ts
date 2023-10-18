@@ -33,7 +33,10 @@ export class AddReclamationComponent implements OnInit {
 
   saveReclamation() {
     const formData = new FormData();
-    formData.append('pieceJointe', this.selectedFile, this.selectedFileName);
+    if (this.selectedFile) {
+      formData.append('pieceJointe', this.selectedFile, this.selectedFileName);
+    }
+    
     formData.append('reclamation', JSON.stringify(this.reclamation));
 
     this.reclamationServcie.addReclamation(formData).subscribe(
