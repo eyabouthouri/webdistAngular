@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { FormationService } from 'src/app/Service/formation.service';
 import { Formation } from 'src/app/model/Formation';
 
@@ -9,7 +10,7 @@ import { Formation } from 'src/app/model/Formation';
 })
 export class AadFormationComponent implements OnInit {
 
-  constructor(private formationservice:FormationService) { }
+  constructor(private formationservice:FormationService ,private route:Router) { }
   formation:Formation
   selectedFile: File | null = null;
 
@@ -22,9 +23,12 @@ export class AadFormationComponent implements OnInit {
     }
   }
   addformation(formation:Formation){
+
     console.log(formation)
     this.formationservice.addformation(formation,this.selectedFile).subscribe(data=>{
       console.log(data)
+      this.route.navigate(['/backoffice/back'])
+
     })
   }
 
