@@ -5,6 +5,6 @@ export class Formation{
 
  date_debut:Date
  date_fin: Date
-  image:String
+  image:File
    prix:String
 }
