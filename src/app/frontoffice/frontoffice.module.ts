@@ -12,15 +12,17 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { EventsComponent } from './events/events.component';
 import { ParticipateComponent } from './participate/participate.component';
+import { ShowReponseComponent } from './show-reponse/show-reponse.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   declarations: [
-    FrontofficeComponent,FormationComponent,InscriptionComponent, EventsComponent, ParticipateComponent
+    FrontofficeComponent,FormationComponent,InscriptionComponent, EventsComponent, ParticipateComponent,ShowReponseComponent
   ],
   imports: [
     CommonModule,
-    FrontofficeRoutingModule,FormsModule,HttpClientModule,
+    FrontofficeRoutingModule,FormsModule,HttpClientModule,SharedModule
 
   ]
 })

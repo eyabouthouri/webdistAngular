@@ -14,6 +14,9 @@ import { AadFormationComponent } from './aad-formation/aad-formation.component';
 import { UpdateFormationComponent } from './update-formation/update-formation.component';
 import { EventsAdminComponent } from './events-admin/events-admin.component';
 import { EventsAddComponent } from './events-add/events-add.component';
+import { ReclamationsAdminComponent } from './reclamations-admin/reclamations-admin.component';
+import { ReclamationsNonTraiteesComponent } from './reclamations-non-traitees/reclamations-non-traitees.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -26,13 +29,15 @@ import { EventsAddComponent } from './events-add/events-add.component';
     AadFormationComponent,
     UpdateFormationComponent,
     EventsAdminComponent,
-    EventsAddComponent
+    EventsAddComponent,
+    ReclamationsAdminComponent,
+    ReclamationsNonTraiteesComponent,
+
   ],
   imports: [
     CommonModule,
     BackofficeRoutingModule,FormsModule,HttpClientModule ,
-    BackofficeRoutingModule
-    
+    BackofficeRoutingModule,SharedModule
   ]
 })
 export class BackofficeModule { }

@@ -1,0 +1,108 @@
+<!-- Angular Component Template (reclamations.component.html) -->
+
+<div
+  class="page_banner bg_cover"
+  [style.background-image]="'url(assets/images/page_banner.jpg)'"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div
+          class="banner_content d-sm-flex align-items-center justify-content-between"
+        >
+          <div class="content">
+            <h3 class="page_title">Mes réclamations</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="profile_area pt-30 pb-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <div class="profile_job_alert mt-50">
+          <h4 class="profile_job_alert_title mb-20">Liste des réclamations</h4>
+
+          <div class="job_alert_content table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="name"><p>Sujet</p></th>
+                  <th class="keywords"><p>Description</p></th>
+                  <th class="contract"><p>Date soumission</p></th>
+                  <th class="keywords"><p>Catégorie</p></th>
+                  <th class="keywords"><p>Evaluation</p></th>
+                  <th class="contract"><p>Etat</p></th>
+                  <th class="name"><p>Piece Jointe</p></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of reclamations">
+                  <td class="name">
+                    <div class="job_alert_name">
+                      <h5 class="job_name">{{ item.sujet }}</h5>
+                    </div>
+                  </td>
+                  <td style="padding: 10px" class="keywords">
+                    <textarea disabled cols="20" rows="7">{{
+                      item.description
+                    }}</textarea>
+                  </td>
+                  <td class="name">
+                    <p>
+                      <i class="fa fa-clock-o"></i>
+                      {{ item.dateSoumission | dateFormat }}
+                    </p>
+                  </td>
+                  <td class="name">
+                    <p>{{ item.categorie }}</p>
+                  </td>
+                  <td class="frequency" style="padding: 10px">
+                    <p>{{ item.evaluation }}</p>
+                  </td>
+                  <ng-container *ngIf="item.etat; else enCours">
+                    <td>Traité</td>
+                  </ng-container>
+                  <ng-template #enCours>
+                    <td>En cours de traitement</td>
+                  </ng-template>
+
+                  <td style="padding: 10px">
+                    <img
+                      style="width: 150px; height: 150px"
+                      [src]="serverImageUrl + item.pieceJointe"
+                      alt="Image"
+                    />
+                  </td>
+                  <td class="" style="padding: 10px">
+                    <button
+                      [routerLink]="[
+                        '/frontoffice/showreponse/' + item.idReclamation
+                      ]"
+                      class="btn btn-primary"
+                      *ngIf="item.etat === true"
+                    >
+                      Réponse
+                    </button>
+                  </td>
+                  <td class="name" style="padding: 10px">
+                    <button
+                      (click)="deleteReclamation(item)"
+                      class="btn btn-danger"
+                      [disabled]="item.etat === false"
+                    >
+                      <i class="bi bi-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
