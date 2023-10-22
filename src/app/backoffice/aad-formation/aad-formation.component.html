@@ -1,5 +1,4 @@
 <main id="main" class="main">
-
   <div class="pagetitle">
     <h1>Form Elements</h1>
     <nav>
@@ -9,73 +8,117 @@
         <li class="breadcrumb-item active">Elements</li>
       </ol>
     </nav>
-  </div><!-- End Page Title -->
+  </div>
+  <!-- End Page Title -->
 
   <section class="section">
     <div class="row">
       <div class="col-lg-12">
-
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">General Form Elements</h5>
 
             <!-- General Form Elements -->
-            <form #f="ngForm" (ngSubmit)="addformation(formation)" enctype="multipart/form-data">
+            <form
+              #f="ngForm"
+              (ngSubmit)="addformation(formation)"
+              enctype="multipart/form-data"
+            >
               <div class="row mb-3">
-                <label for="inputText" class="col-sm-2 col-form-label">Titre</label>
+                <label for="inputText" class="col-sm-2 col-form-label"
+                  >Titre</label
+                >
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" name ="titre" [(ngModel)]="formation.titre">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="titre"
+                    [(ngModel)]="formation.titre"
+                  />
                 </div>
               </div>
               <div class="row mb-3">
-                <label for="inputEmail" class="col-sm-2 col-form-label">prix</label>
+                <label for="inputEmail" class="col-sm-2 col-form-label"
+                  >prix</label
+                >
                 <div class="col-sm-10">
-                  <input type="email" class="form-control" name="prix" [(ngModel)]="formation.prix">
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="prix"
+                    [(ngModel)]="formation.prix"
+                  />
                 </div>
               </div>
 
               <div class="row mb-3">
-                <label for="inputNumber" class="col-sm-2 col-form-label" >image</label>
+                <label for="inputNumber" class="col-sm-2 col-form-label"
+                  >image</label
+                >
                 <div class="col-sm-10">
-                  <input class="form-control" type="file" id="formFile" name="image" (change)="onFileSelected($event)" >
+                  <input
+                    class="form-control"
+                    type="file"
+                    id="formFile"
+                    name="image"
+                    (change)="onFileSelected($event)"
+                  />
                 </div>
               </div>
               <div class="row mb-3">
-                <label for="inputDate" class="col-sm-2 col-form-label">Date debut</label>
+                <label for="inputDate" class="col-sm-2 col-form-label"
+                  >Date debut</label
+                >
                 <div class="col-sm-10">
-                  <input type="date" class="form-control" name="date_debut" [(ngModel)]="formation.date_debut">
+                  <input
+                    type="date"
+                    class="form-control"
+                    name="date_debut"
+                    [(ngModel)]="formation.date_debut"
+                  />
                 </div>
               </div>
               <div class="row mb-3">
-                <label for="inputDate" class="col-sm-2 col-form-label">Date fin</label>
+                <label for="inputDate" class="col-sm-2 col-form-label"
+                  >Date fin</label
+                >
                 <div class="col-sm-10">
-                  <input type="date" class="form-control" name="date_fin" [(ngModel)]="formation.date_fin">
+                  <input
+                    type="date"
+                    class="form-control"
+                    name="date_fin"
+                    [(ngModel)]="formation.date_fin"
+                  />
                 </div>
               </div>
 
               <div class="row mb-3">
-                <label for="inputPassword" class="col-sm-2 col-form-label">Description</label>
+                <label for="inputPassword" class="col-sm-2 col-form-label"
+                  >Description</label
+                >
                 <div class="col-sm-10">
-                  <textarea class="form-control" style="height: 100px" name="description" [(ngModel)]="formation.description"></textarea>
+                  <textarea
+                    class="form-control"
+                    style="height: 100px"
+                    name="description"
+                    [(ngModel)]="formation.description"
+                  ></textarea>
                 </div>
               </div>
 
               <div class="row mb-3">
                 <label class="col-sm-2 col-form-label">Submit Button</label>
                 <div class="col-sm-10">
-                  <button type="submit" class="btn btn-primary">Submit Form</button>
+                  <button type="submit" class="btn btn-primary">
+                    Submit Form
+                  </button>
                 </div>
               </div>
-
-            </form><!-- End General Form Elements -->
-
+            </form>
+            <!-- End General Form Elements -->
           </div>
         </div>
-
       </div>
-
-
     </div>
   </section>
-
 </main>

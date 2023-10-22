@@ -1,114 +1,132 @@
 <header class="header-area header_shadow">
-    <div class="header-navbar">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg">
+  <div class="header-navbar">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="toggler-icon"></span>
+          <span class="toggler-icon"></span>
+          <span class="toggler-icon"></span>
+        </button>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="toggler-icon"></span>
-                    <span class="toggler-icon"></span>
-                    <span class="toggler-icon"></span>
-                </button>
+        <div
+          class="collapse navbar-collapse sub-menu-bar"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav ml-auto">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li>
+              <a href="#">Formations</a>
 
-                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li>
-                            <a href="#">Page</a>
+              <ul class="sub-menu">
+                <li><a href="about.html">About</a></li>
+                <li><a href="job-list.html">Job Page</a></li>
+                <li><a href="job-details.html">Job Details</a></li>
+                <li><a href="resume.html">Resume Page</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="pricing.html">Pricing Tables</a></li>
+                <li><a href="change-password.html">Change Password</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="register.html">Register</a></li>
+              </ul>
+            </li>
+            <li>
+              <a routerLink="/frontoffice/events/">Events</a>
 
-                            <ul class="sub-menu">
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="job-list.html">Job Page</a></li>
-                                <li><a href="job-details.html">Job Details</a></li>
-                                <li><a href="resume.html">Resume Page</a></li>
-                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                <li><a href="faq.html">FAQ</a></li>
-                                <li><a href="pricing.html">Pricing Tables</a></li>
-                                <li><a href="change-password.html">Change Password</a></li>
-                                <li><a href="notifications.html">Notifications</a></li>
-                                <li><a href="register.html">Register</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Candidates</a>
+              <ul class="sub-menu">
+                <li><a href="browse-categories.html">Browse Categories</a></li>
+                <li><a href="bookmarked.html">Bookmarked</a></li>
+                <li><a href="add-resume.html">Add Resume</a></li>
+                <li><a href="manage-resume.html">Manage Resumes</a></li>
+                <li><a href="job-alerts.html">Job Alerts</a></li>
+              </ul>
+            </li>
 
-                            <ul class="sub-menu">
-                                <li><a href="browse-categories.html">Browse Categories</a></li>
-                                <li><a href="bookmarked.html">Bookmarked</a></li>
-                                <li><a href="add-resume.html">Add Resume</a></li>
-                                <li><a href="manage-resume.html">Manage Resumes</a></li>
-                                <li><a href="job-alerts.html">Job Alerts</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Employers</a>
+            <li>
+              <a href="blog.html">Blog</a>
 
-                            <ul class="sub-menu">
-                                <li><a href="post-job.html">Post Job</a></li>
-                                <li><a href="manage-jobs.html">Manage Jobs</a></li>
-                                <li><a href="manage-applications.html">Manage Applications</a></li>
-                                <li><a href="browse-resumes.html">Browse Resumes</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="blog.html">Blog</a>
+              <ul class="sub-menu">
+                <li>
+                  <a routerLink="/frontoffice/blogs/listblogs">Blog</a>
+                </li>
+                <li><a href="blog-details.html">Blog Details</a></li>
+              </ul>
+            </li>
+            <li>
+              <a routerLink="/frontoffice/reclamations/addreclamation"
+                >Réclamer</a
+              >
+            </li>
+            <li><a href="login.html">Log In</a></li>
 
-                            <ul class="sub-menu">
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="blog-details.html">Blog Details</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="">Contact</a></li>
-                        <li><a href="login.html">Log In</a></li>
+            <li>
+              <a class="main-btn" routerLink="/frontoffice/projet/addprojet"
+                >Post a job</a
+              >
+            </li>
+          </ul>
+          <!-- navbar nav -->
+        </div>
 
-                        <li><a class="main-btn" href="/frontoffice/projet/addprojet">Post a job</a></li>
-                    </ul> <!-- navbar nav -->
-                </div>
+        <div class="language">
+          <div class="dropdown">
+            <button
+              class="language_btn dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              en
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a href="#">English</a>
+              <a href="#">Deutsch</a>
+              <a href="#">Русский</a>
+              <a href="#">Español</a>
+              <a href="#">Français</a>
+            </div>
+          </div>
+        </div>
+        <!-- language -->
+      </nav>
+    </div>
+    <!-- container -->
+  </div>
+  <!-- header navbar -->
 
-                <div class="language">
-                    <div class="dropdown">
-                        <button class="language_btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">en </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a href="#">English</a>
-                            <a href="#">Deutsch</a>
-                            <a href="#">Русский</a>
-                            <a href="#">Español</a>
-                            <a href="#">Français</a>
-                        </div>
-                    </div>
-                </div> <!-- language -->
-            </nav>
-        </div> <!-- container -->
-    </div> <!-- header navbar -->
-
-    <div class="header-banner d-lg-flex align-items-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class="header-banner-content">
-                        <h5 class="sub-title">A complete Job Portal for diverse people</h5>
-                        <h2 class="main-title">Talent? Meet opportunity.</h2>
-
-                        <div class="header-search">
-                            <div class="search-form">
-                                <input type="text" placeholder="Search For opportunity">
-                                <select>
-                                    <option value="0">Jobs</option>
-                                    <option value="1">People</option>
-                                </select>
-                                <button class="main-btn">Search now <i class="fa fa-search"></i></button>
-                            </div>
-                            <div class="header-sign">
-                                <p><a href="register.html">Sign up now</a> to get started!</p>
-                            </div>
-                        </div>
-                    </div> <!-- header banner content -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-        <div class="header-banner-image d-flex align-items-center justify-content-end">
-            <div class="image">
-                <img src="assets/images/header_banner.png" alt="header banner">
-            </div> <!-- image -->
-        </div> <!-- header banner image -->
-    </div> <!-- header banner -->
+  <div class="header-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="header-banner-content">
+            <h5 class="sub-title">A complete Job Portal for diverse people</h5>
+            <h2 class="main-title">Talent? Meet opportunity.</h2>
+          </div>
+          <!-- header banner content -->
+        </div>
+      </div>
+      <!-- row -->
+    </div>
+    <!-- container -->
+    <div
+      class="header-banner-image d-flex align-items-center justify-content-end"
+    >
+      <div class="image">
+        <img src="assets/images/header_banner.png" alt="header banner" />
+      </div>
+      <!-- image -->
+    </div>
+    <!-- header banner image -->
+  </div>
+  <!-- header banner -->
 </header>

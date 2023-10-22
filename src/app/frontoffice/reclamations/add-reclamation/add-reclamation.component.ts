@@ -41,7 +41,7 @@ export class AddReclamationComponent implements OnInit {
 
     this.reclamationServcie.addReclamation(formData,this.selectedFile).subscribe(
       () => {
-        this.route.navigate(['reclamations/listreclamations']);
+        this.route.navigate(['frontoffice/reclamations/listreclamations']);
       },
       (error) => {
         console.log('Error:', error);
