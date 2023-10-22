@@ -1,0 +1,53 @@
+<section class="blog_area pt-30 pb-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="single_blog_post pt-50" *ngFor="let item of blogs">
+          <div class="blog_post_thumb">
+            <img
+              [src]="serverImageUrl + item.img"
+              style="width: 600px; height: 300px"
+              alt="Blog"
+            />
+          </div>
+          <div class="blog_post_content">
+            <h3 class="blog_title">
+              <a href="#">{{ item.title }}</a>
+            </h3>
+            <ul class="bolg_meta">
+              <li>
+                <a href="#"><i class="fa fa-user-o"></i> {{ item.author }}</a>
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa fa-calendar-o"></i>
+                  {{ item.date | dateFormat }}</a
+                >
+              </li>
+            </ul>
+            <p>{{ item.content }}</p>
+            <button (click)="deleteBlog(item)" class="main-btn">
+              Supprimer Blog
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="blog_sidebar pt-20">
+          <div class="sidebar_search mt-30">
+            <div class="sidebar_title">
+              <h4 class="title">Search This Site</h4>
+            </div>
+            <div class="search_form">
+              <input type="search" placeholder="Enter your keyword" />
+              <button><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- row -->
+  </div>
+  <!-- container -->
+</section>

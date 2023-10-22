@@ -111,57 +111,36 @@
           class="datatable-wrapper datatable-loading no-footer sortable searchable"
         ></div>
         <div class="datatable-container">
-          <table style="min-width: 235%" class="table">
+          <table class="table" style="width: 700px">
             <thead>
               <tr>
                 <th>Sujet</th>
+                <th>Date réponse</th>
                 <th>Description</th>
-                <th>Date</th>
-                <th>Categorie</th>
-                <th>Evaluation</th>
-                <th>Etat</th>
                 <th>Piece jointe</th>
-                <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let item of reclamations">
-                <td>{{ item.sujet }}</td>
+              <tr>
                 <td>
-                  <textarea cols="25" rows="5" disabled>{{
-                    item.description
+                  {{ reponse.sujet }}
+                </td>
+                <td>{{ reponse.dateReponse }}</td>
+                <td>
+                  <textarea cols="30" rows="5" [disabled]="true">{{
+                    reponse.description
                   }}</textarea>
                 </td>
-                <td>{{ item.dateSoumission | dateFormat }}</td>
-                <td>{{ item.categorie }}</td>
-                <td>{{ item.evaluation }}</td>
-                <td>Traité</td>
                 <td class="image-container">
-                  <img
-                    style="width: 280px; height: 130px"
-                    [src]="serverImageUrl + item.pieceJointe"
-                    alt="Image"
-                  />
-                </td>
-
-                <td *ngIf="item.etat">
-                  <button
-                    [routerLink]="[
-                      '/backoffice/reponses/adminrep',
-                      item.idReclamation
-                    ]"
-                    class="btn btn-primary"
+                  <a
+                    [href]="serverImageUrl + reponse.pieceJointe"
+                    data-lightbox="image-set"
                   >
-                    Réponse
-                  </button>
-                </td>
-                <td>
-                  <button
-                    class="btn btn-danger"
-                    (click)="deleteReclamation(item)"
-                  >
-                    <i class="bi bi-trash"></i>
-                  </button>
+                    <img
+                      style="width: 200px; height: 180px"
+                      [src]="serverImageUrl + reponse.pieceJointe"
+                      alt="Image de la pièce jointe"
+                  /></a>
                 </td>
               </tr>
             </tbody>

@@ -112,19 +112,38 @@
         >
           <div class="datatable-container">
             <!-- Add the search input here -->
-            <div class="search-box">
-              <input
-                class="search-input"
-                type="text"
-                placeholder="Rechercher par sujet, categorie.."
-              />
-              <i class="fa fa-search search-icon"></i>
-            </div>
-            <br />
+
+            <select
+              class="search-input"
+              id="filterByCategorieSelect"
+              [(ngModel)]="selectedCategorie"
+              (change)="filter()"
+            >
+              <option value="" disabled selected>Catégorie</option>
+              <option value="" onclick="showAll()">Tous</option>
+              <option value="PROBLEME_TECHNIQUE">Probleme Technique</option>
+              <option value="FACTURATION">Facturation</option>
+              <option value="SERVICE_CLIENT">Service client</option>
+            </select>
+
+            <select
+              class="search-input"
+              id="filterByEvaluationSelect"
+              [(ngModel)]="selectedEvaluation"
+              (change)="filter()"
+            >
+              <option value="" disabled selected>Evaluation</option>
+              <option value="" onclick="showAll()">Tous</option>
+              <option value="BASSE">Basse</option>
+              <option value="MOYENNE">Moyenne</option>
+              <option value="ELEVEE">Eleve</option>
+              <option value="TRES_ELEVEE">Tres Elevee</option>
+
+              <!-- Add more evaluation options as needed -->
+            </select>
           </div>
-        </div>
-        <div class="datatable-container">
-          <table style="min-width: 200%" class="table">
+
+          <table style="min-width: 230%" class="table">
             <thead>
               <tr>
                 <th>Sujet</th>
@@ -151,9 +170,9 @@
                 <td>En cours de traitement</td>
                 <td class="image-container">
                   <img
-                    style="width: 250px; height: 130px"
+                    style="width: 270px; height: 160px"
                     [src]="serverImageUrl + item.pieceJointe"
-                    alt="Image de la pièce jointe"
+                    alt="Image"
                   />
                 </td>
                 <td *ngIf="item.etat === false">

@@ -12,6 +12,7 @@ const routes: Routes = [{ path: '', component: FrontofficeComponent },{path:'for
 { path: 'condid', loadChildren: () => import('./condidature/condidature.module').then(m => m.CondidatureModule) },
 { path:'showreponse/:id',component:ShowReponseComponent},
 { path: 'reclamations', loadChildren: () => import('./reclamations/reclamations.module').then(m => m.ReclamationsModule) },
+{ path: 'blogs', loadChildren: () => import('./blogs/blogs.module').then(m => m.BlogsModule) },
 ];
 
 @NgModule({

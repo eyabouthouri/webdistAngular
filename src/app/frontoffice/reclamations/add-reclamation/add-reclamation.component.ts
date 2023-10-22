@@ -39,7 +39,7 @@ export class AddReclamationComponent implements OnInit {
     
     formData.append('reclamation', JSON.stringify(this.reclamation));
 
-    this.reclamationServcie.addReclamation(formData).subscribe(
+    this.reclamationServcie.addReclamation(formData,this.selectedFile).subscribe(
       () => {
         this.route.navigate(['reclamations/listreclamations']);
       },

@@ -1,0 +1,57 @@
+<section class="add_resume_area pt-80 pb-80">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-8 col-lg-10">
+        <div class="add_resume_form">
+          <form (ngSubmit)="onSubmit($event)">
+            <h4 class="resume_title">Ajouter un blog</h4>
+
+            <div class="single_resume">
+              <label>Auteur</label>
+              <input
+                type="text"
+                [(ngModel)]="blog.author"
+                name="author"
+                placeholder="Auteur"
+              />
+            </div>
+            <!-- single resume -->
+
+            <div class="single_resume">
+              <label>Titre</label>
+              <input
+                name="title"
+                [(ngModel)]="blog.title"
+                type="text"
+                placeholder="Titre"
+              />
+            </div>
+
+            <div class="single_resume">
+              <label>Description</label>
+              <textarea
+                [(ngModel)]="blog.content"
+                name="content"
+                placeholder=""
+              ></textarea>
+            </div>
+
+            <div class="single_resume">
+              <label for="file-1">Choisir une photo</label>
+              <input
+                id="file-1"
+                name="img"
+                type="file"
+                (change)="onFileSelected($event)"
+              />
+            </div>
+
+            <div class="single_resume d-flex justify-content-between">
+              <button class="main-btn">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

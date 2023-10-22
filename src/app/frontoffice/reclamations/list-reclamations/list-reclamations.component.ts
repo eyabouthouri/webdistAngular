@@ -21,7 +21,6 @@ export class ListReclamationsComponent implements OnInit {
   }
 
   deleteReclamation(d: Reclamation) {
-    console.log('aaaaaaaaa',this.serverImageUrl,d.pieceJointe);
 
     let i = this.reclamations.indexOf(d);
     this.reclamationService.deleteReclamation(d.idReclamation).subscribe(

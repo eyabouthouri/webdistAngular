@@ -11,12 +11,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ShowReponseComponent } from './show-reponse/show-reponse.component';
 import { SharedModule } from '../shared/shared.module';
-import { BlogComponent } from './blog/blog.component';
 
 
 @NgModule({
   declarations: [
-    FrontofficeComponent,FormationComponent,InscriptionComponent, ShowReponseComponent, BlogComponent
+    FrontofficeComponent,FormationComponent,InscriptionComponent, ShowReponseComponent
   ],
   imports: [
     CommonModule,
