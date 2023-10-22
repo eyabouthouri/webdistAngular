@@ -14,8 +14,6 @@ import { HeaderComponent } from './frontoffice/header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderbackComponent } from './backoffice/headerback/headerback.component';
 import { FooterbackComponent } from './backoffice/footerback/footerback.component';
-import { SharedComponent } from './shared/shared.component';
-import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [

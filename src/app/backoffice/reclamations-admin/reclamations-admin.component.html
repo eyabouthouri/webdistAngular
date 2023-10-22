@@ -109,22 +109,9 @@
         </div>
         <div
           class="datatable-wrapper datatable-loading no-footer sortable searchable"
-        >
-          <div class="datatable-container">
-            <!-- Add the search input here -->
-            <div class="search-box">
-              <input
-                class="search-input"
-                type="text"
-                placeholder="Rechercher par sujet, categorie.."
-              />
-              <i class="fa fa-search search-icon"></i>
-            </div>
-            <br />
-          </div>
-        </div>
+        ></div>
         <div class="datatable-container">
-          <table style="min-width: 200%" class="table">
+          <table style="min-width: 235%" class="table">
             <thead>
               <tr>
                 <th>Sujet</th>
@@ -150,27 +137,29 @@
                 <td>{{ item.evaluation }}</td>
                 <td>Traité</td>
                 <td class="image-container">
-                  <a
-                    [href]="'/uploads/' + item.pieceJointe"
-                    data-lightbox="image-set"
-                  >
-                    <img
-                      style="width: 250px; height: 130px"
-                      [src]="serverImageUrl + item.pieceJointe"
-                      alt="Image de la pièce jointe"
-                    />
-                  </a>
+                  <img
+                    style="width: 280px; height: 130px"
+                    [src]="serverImageUrl + item.pieceJointe"
+                    alt="Image"
+                  />
                 </td>
 
-                <td *ngIf="item.etat === true && item.reponse">
-                  <a
-                    [routerLink]="['/reponses/show', item.reponse.id]"
+                <td *ngIf="item.etat">
+                  <button
+                    [routerLink]="[
+                      '/backoffice/reponses/adminrep',
+                      item.idReclamation
+                    ]"
                     class="btn btn-primary"
-                    >Afficher Réponse</a
                   >
+                    Réponse
+                  </button>
                 </td>
                 <td>
-                  <button class="btn btn-danger">
+                  <button
+                    class="btn btn-danger"
+                    (click)="deleteReclamation(item)"
+                  >
                     <i class="bi bi-trash"></i>
                   </button>
                 </td>

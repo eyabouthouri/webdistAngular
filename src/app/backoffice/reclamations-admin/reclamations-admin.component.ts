@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReclamationService } from 'src/app/Service/reclamation.service';
+import { Reclamation } from 'src/app/model/reclamation';
 
 @Component({
   selector: 'app-reclamations-admin',
@@ -18,6 +19,12 @@ export class ReclamationsAdminComponent implements OnInit {
       this.reclamations = data;
     });
 
+  }
+  deleteReclamation(d: Reclamation) {
+
+    let i = this.reclamations.indexOf(d);
+    this.reclamationService.deleteReclamation(d.idReclamation).subscribe(
+      ()=>this.reclamations.splice(i, 1))
   }
 
 }

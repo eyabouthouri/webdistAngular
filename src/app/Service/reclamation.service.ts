@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -11,11 +11,10 @@ export class ReclamationService {
 
   constructor(private http: HttpClient) { }
 
-
   getReclamations(): Observable<any> {
+    
     return this.http.get(`${this.baseUrl}/getReclamations`);
   }
-
 
   getReclamationsTraitees(): Observable<any> {
     return this.http.get(`${this.baseUrl}/getReclamationsTraitees`);
@@ -28,9 +27,18 @@ export class ReclamationService {
   deleteReclamation(id:number){
     return this.http.delete(`${this.baseUrl}/deleteReclamation/${id}`);
   }
-  addReclamation(formData:FormData) {
-        return this.http.post(`${this.baseUrl}/addReclamation`, formData);
+
+  addReclamation(formData:FormData, pieceJointe: File) {
+    const params = new HttpParams().set('pieceJointe', pieceJointe ? pieceJointe.name : '');
+        return this.http.post(`${this.baseUrl}/addReclamation`, formData, {params});
   }
-  
+
+  filterCategorie(categorie: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/filtercategorie?categorie=${categorie}`);
+  }
+
+  filterEval(evaluation: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/filtereval?evaluation=${evaluation}`);
+  }
 
 }

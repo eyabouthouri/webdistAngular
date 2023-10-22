@@ -20,23 +20,27 @@
                     [(ngModel)]="reclamation.sujet"
                     class="form-control"
                     required
+                    minlength="3"
                     #t="ngModel"
                   />
                 </div>
                 <div
-                  class="form-group col-md-3 alert alert-danger"
+                  class="form-group col-md-6 alert alert-danger"
                   *ngIf="t.invalid && t.touched"
                 >
                   <div *ngIf="t.hasError('required')">obligatoire</div>
 
-                  <div *ngIf="t.hasError('pattern')">Mail n'est pas valide</div>
+                  <div *ngIf="t.hasError('minlength')">
+                    Au moins 3 caracteres
+                  </div>
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="single_form">
                   <select
+                    required
+                    #g="ngModel"
                     class="form-control"
-                    id="categorie"
                     name="categorie"
                     [(ngModel)]="reclamation.categorie"
                   >
@@ -48,34 +52,60 @@
                     <option value="FACTURATION">Facturation</option>
                   </select>
                 </div>
+                <div
+                  class="form-group col-md-6 alert alert-danger"
+                  *ngIf="g.invalid && g.touched"
+                >
+                  <div *ngIf="g.hasError('required')">obligatoire</div>
+                </div>
               </div>
+
               <div class="col-md-12">
                 <div class="single_form">
                   <select
                     name="evaluation"
                     class="form-control"
+                    #x="ngModel"
                     [(ngModel)]="reclamation.evaluation"
                   >
-                    <option value="" disabled selected>
-                      Evaluation reclamation
-                    </option>
+                    <option value="" selected disabled>Evaluation</option>
                     <option value="BASSE">1 (Basse)</option>
                     <option value="MOYENNE">2 (Moyenne)</option>
                     <option value="ELEVEE">3 (Élevée)</option>
                     <option value="TRES_ELEVEE">4 (Très élevée)</option>
                   </select>
                 </div>
+                <div
+                  class="form-group col-md-6 alert alert-danger"
+                  *ngIf="x.invalid && x.touched"
+                >
+                  <div *ngIf="x.hasError('required')">obligatoire</div>
+                </div>
               </div>
+
               <div class="col-md-12">
                 <div class="single_form">
                   <textarea
+                    required
+                    minlength="10"
                     id="description"
                     name="description"
+                    #n="ngModel"
                     placeholder="Description"
                     [(ngModel)]="reclamation.description"
                   ></textarea>
                 </div>
+                <div
+                  class="form-group col-md-3 alert alert-danger"
+                  *ngIf="n.invalid && n.touched"
+                >
+                  <div *ngIf="n.hasError('required')">obligatoire</div>
+                  <div *ngIf="n.hasError('minlength')">
+                    au moins 10 caracteres
+                  </div>
+                </div>
               </div>
+
               <div class="col-md-12">
                 <br />
                 <input

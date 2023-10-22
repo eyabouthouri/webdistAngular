@@ -109,82 +109,38 @@
         </div>
         <div
           class="datatable-wrapper datatable-loading no-footer sortable searchable"
-        >
-          <div class="datatable-container">
-            <!-- Add the search input here -->
-
-            <select
-              class="search-input"
-              id="filterByCategorieSelect"
-              [(ngModel)]="selectedCategorie"
-              (change)="filterCategorie()"
-            >
-              <option value="" disabled selected>Catégorie</option>
-              <option value="" (click)="showAll()">Tous</option>
-              <option value="PROBLEME_TECHNIQUE">Probleme Technique</option>
-              <option value="FACTURATION">Facturation</option>
-              <option value="SERVICE_CLIENT">Service client</option>
-            </select>
-
-            <select
-              class="search-input"
-              id="filterByEvaluationSelect"
-              [(ngModel)]="selectedEvaluation"
-              (change)="filterEval()"
-            >
-              <option value="" disabled selected>Evaluation</option>
-              <option value="" (click)="showAll()">Tous</option>
-              <option value="BASSE">Basse</option>
-              <option value="MOYENNE">Moyenne</option>
-              <option value="ELEVEE">Eleve</option>
-              <option value="TRES_ELEVEE">Tres Elevee</option>
-
-              <!-- Add more evaluation options as needed -->
-            </select>
-          </div>
-
-          <table style="min-width: 230%" class="table">
+        ></div>
+        <div class="datatable-container">
+          <table class="table" style="width: 700px">
             <thead>
               <tr>
                 <th>Sujet</th>
+                <th>Date réponse</th>
                 <th>Description</th>
-                <th>Date</th>
-                <th>Categorie</th>
-                <th>Evaluation</th>
-                <th>Etat</th>
                 <th>Piece jointe</th>
-                <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let item of reclamations">
-                <td>{{ item.sujet }}</td>
+              <tr>
                 <td>
-                  <textarea cols="25" rows="5" disabled>{{
-                    item.description
+                  {{ reponse.sujet }}
+                </td>
+                <td>{{ reponse.dateReponse }}</td>
+                <td>
+                  <textarea cols="30" rows="5" [disabled]="true">{{
+                    reponse.description
                   }}</textarea>
                 </td>
-                <td>{{ item.dateSoumission | dateFormat }}</td>
-                <td>{{ item.categorie }}</td>
-                <td>{{ item.evaluation }}</td>
-                <td>En cours de traitement</td>
                 <td class="image-container">
-                  <img
-                    style="width: 270px; height: 160px"
-                    [src]="serverImageUrl + item.pieceJointe"
-                    alt="Image"
-                  />
-                </td>
-                <td *ngIf="item.etat === false">
                   <a
-                    class="btn btn-success edit-item"
-                    [routerLink]="[
-                      '/backoffice/reponses/addreponse',
-                      item.idReclamation
-                    ]"
+                    [href]="serverImageUrl + reponse.pieceJointe"
+                    data-lightbox="image-set"
                   >
-                    Traiter
-                  </a>
+                    <img
+                      style="width: 200px; height: 180px"
+                      [src]="serverImageUrl + reponse.pieceJointe"
+                      alt="Image de la pièce jointe"
+                  /></a>
                 </td>
               </tr>
             </tbody>
