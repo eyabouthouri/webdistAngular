@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProjetComponent } from './frontoffice/projet/projet.component';
 
 
 const routes: Routes = [
