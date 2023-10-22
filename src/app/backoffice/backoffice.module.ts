@@ -12,6 +12,8 @@ import { ProjetbackComponent } from './projetback/projetback.component';
 import { CondidaturebackComponent } from './condidatureback/condidatureback.component';
 import { AadFormationComponent } from './aad-formation/aad-formation.component';
 import { UpdateFormationComponent } from './update-formation/update-formation.component';
+import { EventsAdminComponent } from './events-admin/events-admin.component';
+import { EventsAddComponent } from './events-add/events-add.component';
 
 
 @NgModule({
@@ -23,12 +25,14 @@ import { UpdateFormationComponent } from './update-formation/update-formation.co
 
     AadFormationComponent,
     UpdateFormationComponent,
-
+    EventsAdminComponent,
+    EventsAddComponent
   ],
   imports: [
     CommonModule,
     BackofficeRoutingModule,FormsModule,HttpClientModule ,
-    BackofficeRoutingModule,FormsModule
+    BackofficeRoutingModule
+    
   ]
 })
 export class BackofficeModule { }
