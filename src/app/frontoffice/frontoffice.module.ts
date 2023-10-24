@@ -14,11 +14,16 @@ import { EventsComponent } from './events/events.component';
 import { ParticipateComponent } from './participate/participate.component';
 import { ShowReponseComponent } from './show-reponse/show-reponse.component';
 import { SharedModule } from '../shared/shared.module';
+import { LoginComponent } from '../login/login.component';
+import { SignupComponent } from '../signup/signup.component';
 
 
 @NgModule({
   declarations: [
-    FrontofficeComponent,FormationComponent,InscriptionComponent, EventsComponent, ParticipateComponent,ShowReponseComponent
+
+    FrontofficeComponent,FormationComponent,InscriptionComponent, EventsComponent, ParticipateComponent,ShowReponseComponent,LoginComponent, SignupComponent,
+
+
   ],
   imports: [
     CommonModule,

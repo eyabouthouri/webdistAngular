@@ -1,30 +1,31 @@
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Incription</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
+<main>
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Incription</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" *ngIf="inscriptiontermine == false" >
 
-          <form #f="ngForm" (ngSubmit)="inscriver(inscri)">
+            <form #f="ngForm" (ngSubmit)="inscriver(inscri)">
 
-              <div class="single_post_job">
-                  <label>Nom</label>
-                  <input type="text" name="nom"placeholder="votre nom" [(ngModel)]="inscri.nom">
-              </div> <!-- single resume -->
-              <div class="single_post_job">
-                  <label>Prenom</label>
-                  <input type="text"  name="prenom" placeholder="votre prenom" [(ngModel)]="inscri.prenom">
+                <div class="single_post_job">
+                    <label>Nom</label>
+                    <input type="text" name="nom"placeholder="votre nom" [(ngModel)]="inscri.nom">
+                </div> <!-- single resume -->
+                <div class="single_post_job">
+                    <label>Prenom</label>
+                    <input type="text"  name="prenom" placeholder="votre prenom" [(ngModel)]="inscri.prenom">
+                </div>
+                <div class="single_post_job">
+                  <label>email</label>
+                  <input type="text"  name="email" placeholder="votre mail" [(ngModel)]="inscri.email">
               </div>
-              <div class="single_post_job">
-                <label>email</label>
-                <input type="text"  name="email" placeholder="votre mail" [(ngModel)]="inscri.email">
-            </div>
 
-              <!-- single resume -->
+                <!-- single resume -->
 
 
 
@@ -32,13 +33,23 @@
 
 
 
-              <div class="single_post_job">
-                  <button class="main-btn" type="submit">S'inscrire</button>
-              </div> <!-- single resume -->
+                <div class="single_post_job">
+                    <button class="main-btn" type="submit" >S'inscrire</button>
+                </div> <!-- single resume -->
 
-          </form>
+            </form>
+        </div>
+
+        <div class="modal-body" *ngIf="inscriptiontermine == true">
+          <div class="success-message">
+            <img src="assets/images/sucess.png" width="200" height="200" />
+              <p>Merci pour votre inscription !</p>
+          </div>
       </div>
 
+
+      </div>
     </div>
   </div>
-</div>
+
+</main>

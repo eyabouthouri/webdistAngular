@@ -1,4 +1,5 @@
-<app-header *ngIf="isFrontOfficeRoute()"></app-header>
+
+<app-header *ngIf="isFrontOfficeRoute() == true|| isbackRoute() == false"></app-header>
 <app-headerback *ngIf="isbackRoute()"></app-headerback>
 <router-outlet></router-outlet>
 <app-footerback *ngIf="isbackRoute()"></app-footerback>

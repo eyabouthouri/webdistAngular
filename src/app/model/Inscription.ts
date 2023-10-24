@@ -3,8 +3,8 @@ export class Inscription{
   idUser:string
   nom:string
 
-  prenom:Date
-  email: Date
+  prenom:string
+  email: string
   dateInscription:String
   etat:String
 }

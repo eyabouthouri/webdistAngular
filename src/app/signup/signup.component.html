@@ -1,0 +1,45 @@
+<section class="login_area pt-80 pb-80">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-lg-5 col-md-8 col-sm-10">
+              <div class="login_form">
+                  <form action="#"   #f="ngForm" method="post" (ngSubmit)="signUp()">
+                      <h4 class="login_title">Create Your account </h4>
+                      <div class="single_login">
+                        <i class="fa fa-user"></i>
+                        <input type="text" placeholder="firstname" name="firstName" [(ngModel)]="user.firstName">
+                    </div> <!-- single login -->
+                    <div class="single_login">
+                      <i class="fa fa-user"></i>
+                      <input type="text" placeholder="lastname" name="lastname" [(ngModel)]="user.lastName">
+                  </div> <!-- single login -->
+
+                      <div class="single_login">
+                          <i class="fa fa-user"></i>
+                          <input type="text" placeholder="Username" name="username" [(ngModel)]="user.username">
+                      </div> <!-- single login -->
+
+                      <div class="single_login">
+                          <i class="fa fa-envelope"></i>
+                          <input type="text" placeholder="Email" name="email" [(ngModel)]="user.email">
+                      </div> <!-- single login -->
+
+                      <div class="single_login">
+                          <i class="fa fa-lock"></i>
+                          <input type="password" placeholder="Password" name="password" [(ngModel)]="user.password">
+                      </div> <!-- single login -->
+
+
+                      <div class="single_login">
+                          <button class="main-btn">Register</button>
+                      </div> <!-- single login -->
+
+                      <div class="single_login">
+                          <p>Already have an account? <a href="login.html">Log In</a></p>
+                      </div> <!-- single login -->
+                  </form>
+              </div> <!-- login form -->
+          </div>
+      </div> <!-- row -->
+  </div> <!-- container -->
+</section>

@@ -1,0 +1,36 @@
+<section class="login_area pt-80 pb-80">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-lg-5 col-md-8 col-sm-10">
+              <div class="login_form">
+                  <form action="#"  #f="ngForm" method="post" (ngSubmit)="login()" >
+                      <h4 class="login_title">Login </h4>
+
+                      <div class="single_login">
+                          <i class="fa fa-user"></i>
+                          <input type="text" placeholder="Username" name="username" [(ngModel)]="user.username">                      </div> <!-- single login -->
+
+                      <div class="single_login">
+                          <i class="fa fa-lock"></i>
+                          <input type="password" placeholder="Password" name="password" [(ngModel)]="user.password">
+                      </div> <!-- single login -->
+
+                      <div class="single_login checkbox">
+                          <input id="checkbox1" type="checkbox">
+                          <label for="checkbox1"></label>
+                          <span>Keep Me Signed In</span>
+                      </div> <!-- single login -->
+
+                      <div class="single_login">
+                          <button class="main-btn">Submit</button>
+                      </div> <!-- single login -->
+
+                      <div class="single_login">
+                          <p><a routerLink="/signup">Don't have an account?</a></p>
+                      </div> <!-- single login -->
+                  </form>
+              </div> <!-- login form -->
+          </div>
+      </div> <!-- row -->
+  </div> <!-- container -->
+</section>
