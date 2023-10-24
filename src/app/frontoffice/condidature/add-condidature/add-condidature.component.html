@@ -19,7 +19,7 @@
                         <!-- Prenom -->
                         <div class="single_post_job">
                             <label class="single_post_job" for="description">prenom :</label>
-                            <textarea id="prenom" [(ngModel)]="condidature.prenom" name="prenom" #prenom="ngModel" required minlength="2"></textarea>
+                            <input id="prenom" [(ngModel)]="condidature.prenom" name="prenom" #prenom="ngModel" required minlength="2">
                         </div>
                         <div class="alert alert-danger" *ngIf="prenom.invalid && prenom.touched">
                             <div *ngIf="prenom.hasError('required')">veuillez saisir le prenom</div>
