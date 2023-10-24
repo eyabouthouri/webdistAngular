@@ -10,11 +10,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { LoginComponent } from '../login/login.component';
+import { SignupComponent } from '../signup/signup.component';
 
 
 @NgModule({
   declarations: [
-    FrontofficeComponent,FormationComponent,InscriptionComponent
+    FrontofficeComponent,FormationComponent,InscriptionComponent, LoginComponent, SignupComponent
   ],
   imports: [
     CommonModule,

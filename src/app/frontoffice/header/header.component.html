@@ -58,9 +58,8 @@
                             </ul>
                         </li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="login.html">Log In</a></li>
-
-                        <li><a class="main-btn" href="post-job.html">Post a job</a></li>
+                        <li *ngIf="!isLoggedin"><a routerLink="/login">Log In</a></li>
+                        <li *ngIf="isLoggedin"><a (click)="logout()">Logout</a></li>
                     </ul> <!-- navbar nav -->
                 </div>
 
