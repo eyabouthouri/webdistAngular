@@ -15,12 +15,17 @@ dateProjet:any
 prix:any
 projet:Projet
 listprojet:any
+searchTerm: string;
+projets: any[] = [];
+
+
   constructor(private projetservice: ProjetService,private HttpClient:HttpClient) {
  
  
  
  
   }
+  
   ngOnInit(): void {
 
     this.projetservice.getallProjet().subscribe(
@@ -30,6 +35,18 @@ listprojet:any
       })
      
   
-    }  
+    } 
 
+
+    search(): void {
+      if (this.searchTerm) { // if there's a searchTerm, filter results
+          this.projetservice.searchByNom(this.searchTerm).subscribe(data => {
+              this.listprojet = data;
+          });
+      } else { // if searchTerm is empty, fetch all projects
+          this.projetservice.getallProjet().subscribe(data => {
+              this.listprojet = data;
+          });
+        }
+      }
 }

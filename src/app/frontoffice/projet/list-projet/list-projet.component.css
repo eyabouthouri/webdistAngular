@@ -1,0 +1,68 @@
+.job_projects {
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+input {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.single_jobs {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.single_jobs:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.single_jobs img {
+    max-width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.jobs_content {
+    padding: 15px;
+}
+
+.jobs_title a {
+    color: #333;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.jobs_meta {
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #eee;
+}
+
+.jobs_meta p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.jobs_btn .main-btn-2 {
+    margin-top: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+.search-input {
+    padding: 8px 10px; /* Réduisez le padding pour réduire la hauteur */
+    width: 30%;       /* Réduisez la largeur à 30% de son conteneur parent */
+    margin: 0 auto;   /* Centrer l'input */
+    font-size: 12px;  /* Réduisez la taille de la police */
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    display: block;  /* Assurez-vous que l'input est en block pour que 'margin: 0 auto;' fonctionne */
+}
+

@@ -47,10 +47,13 @@
     
 
 
-<div class="job_projects">
-    <div class="row">
-        <!-- Start of ngFor loop -->
-        <div class="col-sm-4" *ngFor="let p of listprojet ">
+    <div class="job_projects">
+        <input class="search-input" [(ngModel)]="searchTerm" (keyup)="search()" placeholder="Search by title">
+
+        <div class="row">
+
+            <!-- Display projects -->
+            <div class="col-sm-4" *ngFor="let p of listprojet ">
 
             <div class="single_jobs jobs_border text-center mt-30 mx-auto custom-card-size">
                 <img src="assets/images/jobs-1.jpg" alt="jobs">
