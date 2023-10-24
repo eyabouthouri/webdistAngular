@@ -8,7 +8,7 @@ import { Blog } from 'src/app/model/blog';
   styleUrls: ['./list-blogs.component.css']
 })
 export class ListBlogsComponent implements OnInit {
-  serverImageUrl: string = 'http://localhost:5000/uploads/';
+  serverImageUrl: string = 'http://localhost:8088/uploads/';
   blogs: Blog[]; 
   constructor(private blogService: BlogService) { }
 

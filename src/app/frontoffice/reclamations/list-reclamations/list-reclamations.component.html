@@ -30,6 +30,7 @@
             <table class="table">
               <thead>
                 <tr>
+                  <th class="name"><p>Nom</p></th>
                   <th class="name"><p>Sujet</p></th>
                   <th class="keywords"><p>Description</p></th>
                   <th class="contract"><p>Date soumission</p></th>
@@ -41,6 +42,11 @@
               </thead>
               <tbody>
                 <tr *ngFor="let item of reclamations">
+                  <td class="name">
+                    <div class="job_alert_name">
+                      <h5 class="job_name">{{ item.nom }}</h5>
+                    </div>
+                  </td>
                   <td class="name">
                     <div class="job_alert_name">
                       <h5 class="job_name">{{ item.sujet }}</h5>

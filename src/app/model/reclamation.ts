@@ -3,6 +3,7 @@ import { Evaluation } from "./evaluation.enum";
 
 export class Reclamation{
   idReclamation: number;
+  nom: string;
   sujet: string;
   description: string;
   dateSoumission: Date;

@@ -21,14 +21,12 @@ export class AddBlogComponent implements OnInit {
   saveBlog(){
     this.blogService.addBlog(this.blog).subscribe(
       () => {
-        this.route.navigate(['frontoffice/blogs/listblogs']);
+        this.route.navigate(['/frontoffice/blogs/listblogs']);
       },
       (error) => {
         console.log('Error:', error);
       },
-      () => {
-        console.log('Complete');
-      }
+     
     );
 
   }

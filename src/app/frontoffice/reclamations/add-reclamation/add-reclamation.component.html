@@ -14,6 +14,30 @@
               <div class="col-md-12">
                 <div class="single_form">
                   <input
+                    name="nom"
+                    type="text"
+                    placeholder="Nom"
+                    [(ngModel)]="reclamation.nom"
+                    class="form-control"
+                    required
+                    minlength="3"
+                    #r="ngModel"
+                  />
+                </div>
+                <div
+                  class="form-group col-md-6 alert alert-danger"
+                  *ngIf="r.invalid && r.touched"
+                >
+                  <div *ngIf="r.hasError('required')">obligatoire</div>
+
+                  <div *ngIf="r.hasError('minlength')">
+                    Au moins 3 caracteres
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="single_form">
+                  <input
                     name="sujet"
                     type="text"
                     placeholder="Sujet"
