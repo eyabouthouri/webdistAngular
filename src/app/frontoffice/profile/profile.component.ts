@@ -9,6 +9,8 @@ import { HttpClient } from '@angular/common/http'; // Import HttpClient
 export class ProfileComponent implements OnInit {
   userName: string | null;
   welcometext:string | null;
+  update:boolean;
+  resumeid:string | null;
   data = {
     name: '',
     email: '',
@@ -26,6 +28,7 @@ export class ProfileComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
+    this.update=false;
     this.userName = localStorage.getItem('username');
     this.data.userId=localStorage.getItem('iduser');
     this.http.get('http://localhost:8081/resume-service/api/freelancer-resumes/'+localStorage.getItem('iduser')).subscribe((response) => {
@@ -34,7 +37,8 @@ export class ProfileComponent implements OnInit {
     {this.welcometext ="vous n'avez pas encore rempli votre CV, veuillez remplir votre CV pour avoir plus de chances d'être embauché"}
     else
     {this.welcometext ="assurez-vous que votre CV est toujours à jour";
-    
+    this.update=true;
+    this.resumeid=response['id'];
     this.data = {
       name: response['name'],
       email: response['email'],
@@ -59,12 +63,23 @@ export class ProfileComponent implements OnInit {
   }
 
   onSubmit() {
-    
-    this.http.post('http://localhost:8081/resume-service/api/freelancer-resumes', this.data)
+    if(this.update===false)
+    {
+      this.http.post('http://localhost:8081/resume-service/api/freelancer-resumes', this.data)
       .subscribe(response => {
         // Handle the response as needed
         console.log('Resume submitted:', response);
       });
+    }
+    else if(this.update===true)
+    {
+      this.http.put('http://localhost:8081/resume-service/api/freelancer-resumes/'+this.resumeid, this.data)
+      .subscribe(response => {
+        // Handle the response as needed
+        console.log('Resume updated:', response);
+      });
+    }
+   
   }
 
 }

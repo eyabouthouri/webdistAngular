@@ -38,8 +38,8 @@
 
     
       <!-- Add more input fields for other resume properties -->
-  
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary" *ngIf="!update">Submit</button>
+      <button type="submit" class="btn btn-primary" *ngIf="update">Update</button>
     </form>
   </div>
   
