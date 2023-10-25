@@ -84,8 +84,7 @@
 <div class="container">
     <!-- ... Your existing content ... -->
   
-    <!-- Modal Trigger Button -->
-    <a (click)="openContactModal()">Contact</a>
+
   
     <!-- Modal -->
     <div *ngIf="isModalOpen" class="modal">
@@ -98,7 +97,7 @@
           <br/>
           <input class="form-control" type="email" placeholder="Email">
           <br/>
-          <textarea class="form-control" placeholder="Message"></textarea>
+          <textarea class="form-control" rows="10" placeholder="Message"></textarea>
           <br/>
           <button type="submit" class="btn btn-primary">Send</button>
         </form>

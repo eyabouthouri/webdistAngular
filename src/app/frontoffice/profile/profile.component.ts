@@ -69,6 +69,7 @@ export class ProfileComponent implements OnInit {
       .subscribe(response => {
         // Handle the response as needed
         console.log('Resume submitted:', response);
+        alert("Resume ajouté avec success")
       });
     }
     else if(this.update===true)
@@ -77,6 +78,7 @@ export class ProfileComponent implements OnInit {
       .subscribe(response => {
         // Handle the response as needed
         console.log('Resume updated:', response);
+        alert("Resume mis a jour avec success")
       });
     }
    
