@@ -28,6 +28,10 @@
 
             </li>
             <li>
+              <a routerLink="/frontoffice/recruter">Recruter</a>
+
+            </li>
+            <li>
               <a routerLink="/frontoffice/blogs/listblogs">Blog</a>
               <ul class="sub-menu">
                 <li><a routerLink="frontoffice/blogs/addblog">Blog add</a></li>
@@ -41,7 +45,9 @@
             </li>
             <li><a href="contact.html">Contact</a></li>
             <li *ngIf="!isLoggedin"><a routerLink="/login">Log In</a></li>
+            <li *ngIf="isLoggedin">  <a routerLink="/frontoffice/profile">Resume</a></li>
             <li *ngIf="isLoggedin"><a (click)="logout()">Logout</a></li>
+           
             <li>
               <a class="main-btn" routerLink="/frontoffice/projet/addprojet"
                 >Post a job</a

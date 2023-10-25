@@ -1,0 +1,108 @@
+<div class="container">
+    <div class="row">
+      <!-- Filter Bar (Left Column) -->
+      <div class="col-md-3">
+        <h4>Filter Options</h4>
+    
+        <!-- Min PreHour Filter -->
+        <div class="form-group">
+          <label for="filterMinPreHour">Min PreHour:</label>
+          <input
+            type="range"
+            class="form-control"
+            id="filterMinPreHour"
+            [(ngModel)]="minPreHour"
+            min="0"
+            max="100"
+          />
+          <div class="d-flex justify-content-between">
+            <span class="badge badge-info">{{ minPreHour }} USD/hr</span>
+          </div>
+        </div>
+    
+        <!-- Max PreHour Filter -->
+        <div class="form-group">
+          <label for="filterMaxPreHour">Max PreHour:</label>
+          <input
+            type="range"
+            class="form-control"
+            id="filterMaxPreHour"
+            [(ngModel)]="maxPreHour"
+            min="0"
+            max="100"
+          />
+          <div class="d-flex justify-content-between">
+            <span class="badge badge-info">{{ maxPreHour }} USD/hr</span>
+          </div>
+        </div>
+    
+        <!-- Search Bar -->
+        <div class="form-group">
+          <label for="filterName">Search by Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="filterName"
+            [(ngModel)]="searchTerm"
+          />
+        </div>
+    
+        <!-- Filter Button -->
+        <button class="btn btn-primary" (click)="applyFilter()">Apply Filters</button>
+      </div>
+    
+      <!-- GridView (Right Column) -->
+      <div class="col-md-9">
+        <h4>Our freelancers</h4>
+        <div class="row">
+          <div class="col-md-4 mb-4" *ngFor="let item of filteredItems">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{ item.name }}</h5>
+                <p class="card-text">{{ item.professionTitle }}</p>
+                <p class="card-text">Email: {{ item.email }}</p>
+    
+                <!-- Display Location and Pre Hour as Tags -->
+                <span class="badge badge-info">{{ item.location }}</span>
+                <span class="badge badge-success">{{ item.preHour }} USD/hr</span>
+    
+                <!-- Download PDF Button -->
+                <button (click)="downloadPdf()" class="btn btn-primary" target="_blank" style="margin-right: 10px;">Download Resume</button>
+    
+                <!-- Contact Button (You can replace the 'href' with your desired contact action) -->
+                <button (click)="openContactModal()" class="btn btn-success">Contact</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- existing.component.html -->
+<div class="container">
+    <!-- ... Your existing content ... -->
+  
+    <!-- Modal Trigger Button -->
+    <a (click)="openContactModal()">Contact</a>
+  
+    <!-- Modal -->
+    <div *ngIf="isModalOpen" class="modal">
+      <div class="modal-content">
+        <span class="close" (click)="closeContactModal()">&times;</span>
+        <!-- Your contact form content goes here -->
+        <form (submit)="submitForm()">
+          <!-- Email form fields go here -->
+          <input class="form-control" type="text" placeholder="Name">
+          <br/>
+          <input class="form-control" type="email" placeholder="Email">
+          <br/>
+          <textarea class="form-control" placeholder="Message"></textarea>
+          <br/>
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

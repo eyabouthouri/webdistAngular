@@ -16,12 +16,15 @@ import { ShowReponseComponent } from './show-reponse/show-reponse.component';
 import { SharedModule } from '../shared/shared.module';
 import { LoginComponent } from '../login/login.component';
 import { SignupComponent } from '../signup/signup.component';
+import { ProfileComponent } from './profile/profile.component';
+import { RecruterComponent } from './recruter/recruter.component';
+
 
 
 @NgModule({
   declarations: [
 
-    FrontofficeComponent,FormationComponent,InscriptionComponent, EventsComponent, ParticipateComponent,ShowReponseComponent,LoginComponent, SignupComponent,
+    FrontofficeComponent,FormationComponent,InscriptionComponent, EventsComponent, ParticipateComponent,ShowReponseComponent,LoginComponent, SignupComponent, ProfileComponent, RecruterComponent,
 
 
   ],
